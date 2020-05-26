@@ -15,6 +15,7 @@ from datasets.bert_processors.reuters_processor import ReutersProcessor
 from datasets.bert_processors.sogou_processor import SogouProcessor
 from datasets.bert_processors.sst_processor import SST2Processor
 from datasets.bert_processors.yelp2014_processor import Yelp2014Processor
+from datasets.bert_processors.mafia_scum_processor import MafiaScumProcessor
 from models.bert.args import get_args
 
 
@@ -49,7 +50,8 @@ if __name__ == '__main__':
         'AAPD': AAPDProcessor,
         'AGNews': AGNewsProcessor,
         'Yelp2014': Yelp2014Processor,
-        'Sogou': SogouProcessor
+        'Sogou': SogouProcessor,
+        'MafiaScum': MafiaScumProcessor
     }
 
     if args.gradient_accumulation_steps < 1:
