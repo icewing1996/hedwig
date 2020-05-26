@@ -5,6 +5,9 @@ import numpy as np
 from nltk.tokenize import sent_tokenize
 
 
+csv.field_size_limit(sys.maxsize)
+
+
 class InputExample(object):
     """A single training/test example for simple sequence classification."""
 
