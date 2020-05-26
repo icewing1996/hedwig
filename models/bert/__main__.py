@@ -120,8 +120,9 @@ if __name__ == '__main__':
 
     else:
         optimizer = AdamW(optimizer_grouped_parameters, lr=args.lr, weight_decay=0.01, correct_bias=False)
-        scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=WARMUP_STEPS, num_training_steps = num_train_optimization_steps,
-                                                    warmup_steps=args.warmup_proportion * num_train_optimization_steps )
+        scheduler = get_linear_schedule_with_warmup(optimizer, 
+                                                    num_training_steps = num_train_optimization_steps,
+                                                    num_warmup_steps=args.warmup_proportion * num_train_optimization_steps )
 
 
     trainer = BertTrainer(model, optimizer, processor, scheduler, tokenizer, args)
